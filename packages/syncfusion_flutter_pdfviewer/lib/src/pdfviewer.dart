@@ -2680,7 +2680,7 @@ class SfPdfViewerState extends State<SfPdfViewer> with WidgetsBindingObserver {
                       : const Color(0xFF303030)),
               // ignore: always_specify_types
               child: FutureBuilder(
-                  future: _getImages(),
+                  future: getImages(),
                   builder:
                       (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
                     if (snapshot.hasData) {
@@ -3433,7 +3433,7 @@ class SfPdfViewerState extends State<SfPdfViewer> with WidgetsBindingObserver {
   }
 
   /// Get the rendered pages from plugin.
-  Future<Map<int, List<dynamic>>?>? _getImages() {
+  Future<Map<int, List<dynamic>>?>? getImages() {
     if (widget.pageLayoutMode == PdfPageLayoutMode.single) {
       Future<Map<int, List<dynamic>>?>? renderedPages;
       final int startPage = _pdfViewerController.pageNumber - 1 != 0
